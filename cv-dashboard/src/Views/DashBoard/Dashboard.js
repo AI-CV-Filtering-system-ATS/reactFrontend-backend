@@ -2,7 +2,7 @@ import React from 'react';
 import './Dashboard.css';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { PieChart, Pie, Cell } from 'recharts';
-import usericon from "./icon.png"
+import usericon from "../../Resources/icon.png"
 
 const Dashboard = () => {
     const barData = [
