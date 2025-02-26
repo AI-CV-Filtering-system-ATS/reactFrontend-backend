@@ -103,4 +103,27 @@
     padding: 15px;
     background: rgba(255, 255, 255, 0.1);
   }
+
+
+
+  .cv-list-container {
+    max-width: 600px;  /* Adjust width as needed */
+    height: 400px;  /* Set a fixed height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: Add a border */
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Optional: Light background */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cv-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add spacing between items */
+}
+
+
+
   

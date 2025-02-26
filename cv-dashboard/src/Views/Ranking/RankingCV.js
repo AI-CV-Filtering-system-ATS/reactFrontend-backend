@@ -29,11 +29,13 @@ function RankingCV() {
             </div>
 
             {showCVList && (
-                <div className="cv-list">
+                <div className="cv-list-container"> {/* Added wrapper for scrolling */}
                     <h2>Ranked CVs</h2>
-                    {cvList.map((cv, index) => (
-                        <CVcard url={cv.cvUrl} name={cv.name} extractedText ={cv.extractedText} />
-                    ))}
+                    <div className="cv-list">
+                        {cvList.map((cv, index) => (
+                            <CVcard key={index} url={cv.cvUrl} name={cv.name} extractedText={cv.extractedText} />
+                        ))}
+                    </div>
                 </div>
             )}
         </div>
