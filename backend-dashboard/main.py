@@ -1,24 +1,23 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pymongo import MongoClient
-import os
 
 app = FastAPI()
 
 # Enable CORS for React frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["http://localhost:3000"],  # Replace with your frontend URL if needed
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# MongoDB Connection
-MONGO_URI = "mongodb+srv://ramanayakepavithra2000:ramanayakepavithra2000@cluster0.yishj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+# MongoDB Connection (Using Your Database & Collection)
+MONGO_URI = "mongodb+srv://esandu123:hello12345hello@cluster1.wer9edk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1"
 client = MongoClient(MONGO_URI)
-db = client["CvPdf"]  # Replace with your actual database name
-collection = db["Cv-slt"]  # Replace with your actual collection name
+db = client["sltcvproject"]  # Your actual database
+collection = db["cvText"]  # Your actual collection
 
 @app.get("/api/dashboard")
 def get_dashboard_data():
