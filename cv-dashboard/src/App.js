@@ -1,15 +1,28 @@
 import React from 'react';
-import Navbar from './Navbar';
-import Dashboard from './Dashboard';
-import Footer from './Footer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar';
+import Home from './Pages/HomePage'; // Import Home Page
+import Dashboard from './Pages/Dashboard';
+import CVUpload from './Pages/CVUpload';
+import CVRank from './Pages/CVRank';
+import Footer from './Components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Dashboard />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/cv-upload" element={<CVUpload />} />
+          <Route path="/cv-rank" element={<CVRank />} />
+        </Routes>
+
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
