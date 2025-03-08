@@ -12,8 +12,8 @@ const Dashboard = () => {
     const [barChartData, setBarChartData] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/job_roles")
-            .then((response) => {
+        axios.get('http://localhost:8000/member1/api/job_roles')
+        .then((response) => {
                 const formattedData = Object.keys(response.data).map(role => ({
                     name: role,
                     value: response.data[role]
@@ -22,11 +22,11 @@ const Dashboard = () => {
             })
             .catch((error) => console.error("Error fetching job roles data:", error));
 
-        axios.get("http://localhost:8000/api/dashboard")
+        axios.get("http://localhost:8000/member1/api/dashboard")
             .then((response) => setTotalCVs(response.data.total_cvs))
             .catch((error) => console.error("Error fetching total CVs data:", error));
 
-        axios.get("http://localhost:8000/api/job_roles/counts")
+        axios.get("http://localhost:8000/member1/api/job_roles/counts")
             .then((response) => {
                 const formattedBarChartData = Object.keys(response.data).map(role => ({
                     name: role,

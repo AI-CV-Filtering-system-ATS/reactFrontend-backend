@@ -6,6 +6,8 @@ import Dashboard from './Pages/Dashboard';
 import CVUpload from './Pages/CVUpload';
 import CVRank from './Pages/CVRank';
 import Footer from './Components/Footer';
+import UploadFolder from "./Pages/uploadFolder";
+
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/cv-upload" element={<CVUpload />} />
+          <Route path="/cv-upload"  element={<UploadFolder />}  />
           <Route path="/cv-rank" element={<CVRank />} />
         </Routes>
 
