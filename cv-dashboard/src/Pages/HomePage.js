@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./HomePage.css";
-import Background from "../Components/Background"; // Import the component
+import Background from "../Components/Background";  
 
 
 const HomePage = () => {

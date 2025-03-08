@@ -20,7 +20,7 @@ const UploadFolder = () => {
 
   const fetchUploadedCVs = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:8000/member2/cvs");
+      const response = await axios.get("http://127.0.0.1:8000/Esandu/cvs");
       setUploadedCVs(response.data.cvs || []);
     } catch (error) {
       console.error("Failed to fetch CVs", error);
@@ -49,7 +49,7 @@ const UploadFolder = () => {
     });
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/member2/upload", formData, {
+      const response = await axios.post("http://127.0.0.1:8000/Esandu/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       
@@ -66,7 +66,7 @@ const UploadFolder = () => {
 
   const viewCVDetails = async (cvId) => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/member2/cv/${cvId}`);
+      const response = await axios.get(`http://127.0.0.1:8000/Esandu/cv/${cvId}`);
       setSelectedCV(response.data);
     } catch (error) {
       console.error("Failed to fetch CV details", error);

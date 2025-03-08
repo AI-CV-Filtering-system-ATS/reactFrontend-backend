@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Dashboard.css';
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, CartesianGrid } from 'recharts';
 import usericon from "../Images/icon.png";
-import Background from "../Components/Background"; // Import the component
+import Background from "../Components/Background";  
 
 
 const Dashboard = () => {
@@ -12,7 +12,7 @@ const Dashboard = () => {
     const [barChartData, setBarChartData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8000/member1/api/job_roles')
+        axios.get('http://localhost:8000/Pavithra/api/job_roles')
         .then((response) => {
                 const formattedData = Object.keys(response.data).map(role => ({
                     name: role,
@@ -22,11 +22,11 @@ const Dashboard = () => {
             })
             .catch((error) => console.error("Error fetching job roles data:", error));
 
-        axios.get("http://localhost:8000/member1/api/dashboard")
+        axios.get("http://localhost:8000/Pavithra/api/dashboard")
             .then((response) => setTotalCVs(response.data.total_cvs))
             .catch((error) => console.error("Error fetching total CVs data:", error));
 
-        axios.get("http://localhost:8000/member1/api/job_roles/counts")
+        axios.get("http://localhost:8000/Pavithra/api/job_roles/counts")
             .then((response) => {
                 const formattedBarChartData = Object.keys(response.data).map(role => ({
                     name: role,
@@ -41,16 +41,16 @@ const Dashboard = () => {
     if (!chartData.length || !barChartData.length) return <p>Loading...</p>;
 
     const colors = [
-        "rgb(255, 94, 77)",    // Vibrant coral
-        "rgb(138, 45, 158)",   // Rich purple
-        "rgb(42, 82, 199)",    // Bright blue
-        "rgb(17, 210, 255)",   // Bright cyan
-        "rgb(240, 178, 66)",   // Warm yellow
-        "rgb(84, 195, 112)",   // Fresh green
-        "rgb(216, 35, 115)",   // Bold pink
-        "rgb(51, 133, 255)",   // Electric blue
-        "rgb(73, 183, 58)",   // Deep purple
-        "rgb(255, 153, 51)"    // Warm orange
+        "rgb(255, 94, 77)",     
+        "rgb(138, 45, 158)",    
+        "rgb(42, 82, 199)",     
+        "rgb(17, 210, 255)",    
+        "rgb(240, 178, 66)",    
+        "rgb(84, 195, 112)",    
+        "rgb(216, 35, 115)",    
+        "rgb(51, 133, 255)",   
+        "rgb(73, 183, 58)",    
+        "rgb(255, 153, 51)"    
     ];
     
     return (
@@ -109,7 +109,7 @@ const Dashboard = () => {
                                                 boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)',
                                             }}
                                             itemStyle={{
-                                                color: 'rgb(255, 255, 255)',  // Change the color of the text
+                                                color: 'rgb(255, 255, 255)',   
                                                 fontFamily: 'Arial, sans-serif',
                                                 fontSize: '14px',
                                                 fontWeight: 'bold',
@@ -141,12 +141,12 @@ const Dashboard = () => {
                                         <YAxis
                                             type="category"
                                             dataKey="name"
-                                            width={150} // Increased width for better visibility
+                                            width={150}  
                                             tickFormatter={(value) => {
                                                 const words = value.split(" ");
                                                 return words.length > 2 ? `${words[0]} ${words[1]}\n${words.slice(2).join(" ")}` : value;
                                             }}
-                                            tick={{ fontSize: 10 }} // Reduce font size if necessary
+                                            tick={{ fontSize: 10 }}  
                                         />
                                         <Tooltip
                                             
@@ -157,7 +157,7 @@ const Dashboard = () => {
                                                 boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.2)',
                                             }}
                                             itemStyle={{
-                                                color: 'rgb(255, 255, 255)',  // Change the color of the text
+                                                color: 'rgb(255, 255, 255)',   
                                                 fontFamily: 'Arial, sans-serif',
                                                 fontSize: '14px',
                                                 fontWeight: 'bold',

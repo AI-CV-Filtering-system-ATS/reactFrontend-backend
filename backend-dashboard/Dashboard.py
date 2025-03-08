@@ -5,62 +5,61 @@ import io
 import base64
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-
-# Define router
+ 
 router = APIRouter()
-
-# MongoDB connection setup
+ 
 MONGO_URI = "mongodb+srv://esandu123:hello12345hello@cluster1.wer9edk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1"  # Replace with your MongoDB URI
 client = MongoClient(MONGO_URI)
 db = client["sltcvproject"]
 collection = db["cvText"]
 
-# Helper function to calculate job role percentages from MongoDB data
 def calculate_job_role_percentages():
-    # Fetch job role counts from MongoDB
     job_role_counts = {}
 
-    # Query to fetch all documents from the collection
     documents = collection.find({})
 
     for doc in documents:
         job_roles = doc.get("Possible Job Roles", [])
         
-        for role in job_roles:  # Consider all job roles in each document
-            # Extract job role name and keyword count
+        for role in job_roles:  
+            
             role_name, keyword_count = role.split(" (Matched Keywords: ")
-            keyword_count = int(keyword_count.split(")")[0])  # Get the matched keyword count
+            keyword_count = int(keyword_count.split(")")[0])  
+            
 
             if role_name in job_role_counts:
                 job_role_counts[role_name] += keyword_count
             else:
                 job_role_counts[role_name] = keyword_count
 
-    # Total count of keywords for all roles
+
     total_keywords = sum(job_role_counts.values())
 
-    # Calculate percentages
+
     percentages = {
         role: (count / total_keywords) * 100 for role, count in job_role_counts.items()
     }
 
-    return percentages, job_role_counts  # Return both percentages and job role counts
+    return percentages, job_role_counts  
 
-# Helper function to calculate job role counts from MongoDB data
+
+
 def calculate_job_role_counts():
     job_role_counts = {}
 
-    # Query to fetch all documents from the collection
+
     documents = collection.find({})
 
     for doc in documents:
         job_roles = doc.get("Possible Job Roles", [])
         
-        # Consider all job roles in each document
-        for role in job_roles:  # No limit on the number of roles considered
-            role_name, _ = role.split(" (Matched Keywords: ")  # Only extract the role name
+       
+       
+        for role in job_roles: 
+            
+            role_name, _ = role.split(" (Matched Keywords: ")   
 
-            # Increment the job role count
+
             if role_name in job_role_counts:
                 job_role_counts[role_name] += 1
             else:
@@ -72,7 +71,7 @@ def calculate_job_role_counts():
 async def get_job_roles_pie_chart():
     percentages, _ = calculate_job_role_percentages()
 
-    # Generate the pie chart
+
     labels = list(percentages.keys())
     sizes = list(percentages.values())
     

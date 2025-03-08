@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
-import Home from './Pages/HomePage'; // Import Home Page
+import Home from './Pages/HomePage'; 
 import Dashboard from './Pages/Dashboard';
-import CVUpload from './Pages/CVUpload';
 import CVRank from './Pages/CVRank';
 import Footer from './Components/Footer';
 import UploadFolder from "./Pages/uploadFolder";

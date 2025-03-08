@@ -1,32 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Montserrat:wght@700&display=swap');
 
 .dashboard-container {
-  background: linear-gradient(to bottom, #007BFF, #033163, #021D39); /* Smooth fade effect */
+  background: linear-gradient(to bottom, #007BFF, #033163, #021D39);  
   min-height: calc(100vh - 140px); 
-    /* ^ Subtract the approximate heights of navbar + footer 
-       to keep the dashboard content from overlapping. */
+ 
     padding: 40px;
     padding-bottom: 100px;
     color: #020202;
     font-family: sans-serif;
     display: flex;
-    justify-content: center; /* Centers horizontally */
+    justify-content: center;  
   }
 
   .title{
     color: #fff;
-    font-family: 'Montserrat', sans-serif; /* More stylish font for title */
+    font-family: 'Montserrat', sans-serif;  
 
   }
   .dashboard-fullcard-outer{
-    background: #009ABC; /* Or your preferred background color */
+    background: #009ABC;  
     padding: 10px;
     min-width: 95%;
     border-radius: 8px;
   }
   
   .dashboard-fullcard-inner{
-    background: #023469; /* Or your preferred background color */
+    background: #023469;  
     padding: 25px;
     min-width: 95%;
     border-radius: 8px;
@@ -65,7 +64,7 @@
   .card-title {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    font-family: 'Montserrat', sans-serif; /* More stylish font for title */
+    font-family: 'Montserrat', sans-serif;  
 
   }
   
@@ -90,14 +89,14 @@
   
   .barchart{
     display: flex;
-    justify-content: center;  /* Centers horizontally */
-    align-items: center;      /* Centers vertically */
+    justify-content: center;  
+    align-items: center;       
     height: 90%; 
     }
   
   .pie-chart-container,
   .bar-chart {
-      filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5)); /* Soft 3D shadow */
+      filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));  
   }
   
   .legend-item {
@@ -113,8 +112,8 @@
   }
 
   .recharts-pie-label {
-    text-shadow: none !important; /* Remove any shadow on pie chart labels */
-    font-weight: bold !important; /* Make labels bold */
+    text-shadow: none !important;  
+    font-weight: bold !important;  
   }
   
 
@@ -124,31 +123,26 @@
 }
   
 
-
-/* Targeting the actual bars inside SVG */
 .bar-chart-bar rect {
   fill: var(--bar-color) !important;
   transition: fill 0.3s ease-in-out;
 }
-
-/* Hover effect on bars */
+ 
 .bar-chart-bar rect:hover {
-  fill: #043835 !important; /* Darker shade on hover */
+  fill: #043835 !important;  
 }
 
-/* Customize Y-axis labels */
-.recharts-layer.recharts-cartesian-axis-tick text {
+ .recharts-layer.recharts-cartesian-axis-tick text {
   font-size: 12px !important;
   font-weight: bold;
-  fill: #adadad !important; /* Darker text */
+  fill: #adadad !important;  
 }
 
 
 
-/* Styling the tooltip */
-.recharts-tooltip-wrapper {
-  background-color: #1e3d58 !important;  /* Darker blue */
-  color: rgb(255, 255, 255) !important;  /* White text */
+ .recharts-tooltip-wrapper {
+  background-color: #1e3d58 !important;   
+  color: rgb(255, 255, 255) !important;   
   border-radius: 5px;
   padding: 10px;
   box-shadow: 0px 4px 6px rgba(102, 93, 93, 0.2);
@@ -157,7 +151,6 @@
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Optional: Tooltip arrow (adjust positioning) */
 .recharts-tooltip-item-list {
   padding: 5px;
 }
