@@ -1,0 +1,122 @@
+/* src/Pages/cv-rank.css */
+
+/* Styling for the page layout */
+.cv-rank-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    /* background-color: #f9fafb; */
+    min-height: 100vh;
+  }
+
+  .page-topic {
+
+  }
+
+  .page-subtopic {
+    color: #f0f0f0;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Styling for the search container */
+  .search-container {
+    position: relative; /* To ensure suggestions are displayed below the input */
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Input field styling */
+  .input-field {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Focused state for the input field */
+  .input-field:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Styling for the suggestions dropdown */
+  .suggestions-dropdown {
+    position: absolute;
+    top: 100%; /* Position suggestions below the input */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    z-index: 1;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 8px; /* Add space between the input box and suggestions */
+  }
+  
+  /* Individual suggestion button styling */
+  .suggestion-button {
+    width: 100%;
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .suggestion-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Styling for the CV cards section */
+  .cv-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .card {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .card-content {
+    padding: 10px 0;
+  }
+  

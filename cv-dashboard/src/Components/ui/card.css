@@ -1,0 +1,20 @@
+/* src/components/ui/card.css */
+.card {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px;
+    width: 100%;
+    max-width: 350px;
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);  /* Slight scale effect on hover */
+  }
+  
+  .card-content {
+    padding: 10px 0;
+  }
+  

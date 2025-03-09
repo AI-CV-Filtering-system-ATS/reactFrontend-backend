@@ -1,0 +1,21 @@
+/* src/components/ui/button.css */
+.button {
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #357ab7;
+  }
+  
+  .button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(72, 126, 255, 0.6);
+  }
+  
