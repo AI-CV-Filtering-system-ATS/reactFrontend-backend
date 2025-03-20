@@ -104,10 +104,10 @@ const CVRank = () => {
           {cvs.map((cv, index) => (
             <Card key={index}>
               <div className="card-content">
-                <h3>Rank {index+1}</h3>
+                <h2>Rank {index+1}</h2>
                 <h3>{cv.file_name}</h3>
-                <p>Similarity Score: {cv.similarity_score.toFixed(2)}</p>
-              </div>
+                <p className='Similarity'>Compatibility: {(cv.similarity_score * 1000).toFixed(2)}%</p>
+                </div>
             </Card>
           ))}
         </div>

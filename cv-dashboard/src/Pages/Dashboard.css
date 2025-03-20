@@ -9,7 +9,8 @@
     color: #020202;
     font-family: sans-serif;
     display: flex;
-    justify-content: center;  
+    justify-content: center; 
+    padding-top: 150px; 
   }
 
   .title{
@@ -56,7 +57,7 @@
   }
   
   .user-icon {
-    width: 60px;
+    width: 30px;
     height: 60px;
   }
   
