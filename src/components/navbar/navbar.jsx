@@ -1,11 +1,36 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./navbar.css"; // Import CSS file
 import logo from "../../assets/logo.png"; // Import logo
-import { FaUserCircle } from "react-icons/fa"; // Import user icon
+import { FaUserCircle, FaSignOutAlt } from "react-icons/fa"; // Import icons
 
 const Navbar = () => {
-  const userName = "Esandu Obadaarahchchi"; // Replace with dynamic user data if available
+  const [userName, setUserName] = useState("");
+  const navigate = useNavigate();
+
+  // Get user data from localStorage on component mount
+  useEffect(() => {
+    const userData = localStorage.getItem("user");
+    if (userData) {
+      try {
+        const parsedUser = JSON.parse(userData);
+        setUserName(parsedUser.fullName || "User");
+      } catch (err) {
+        console.error("Error parsing user data:", err);
+        setUserName("User");
+      }
+    }
+  }, []);
+
+  // Handle logout
+  const handleLogout = () => {
+    // Clear localStorage
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    
+    // Redirect to login page
+    navigate("/login");
+  };
 
   return (
     <nav className="navbar">
@@ -13,12 +38,20 @@ const Navbar = () => {
         <img src={logo} alt="Logo" />
       </div>
       <div className="nav-links">
-        <Link to="/" className="nav-button">Home</Link>
+        <Link to="/home" className="nav-button">Home</Link>
         <Link to="/hire" className="nav-button">Hire</Link>
+        <Link to="/upload" className="nav-button">Upload CV</Link>
       </div>
       <div className="nav-user">
         <FaUserCircle className="user-icon" />
         <span className="user-name">{userName}</span>
+        <button 
+          onClick={handleLogout} 
+          className="logout-button"
+          title="Logout"
+        >
+          <FaSignOutAlt />
+        </button>
       </div>
     </nav>
   );
