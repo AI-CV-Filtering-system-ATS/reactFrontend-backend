@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pymongo
+matplotlib
+pdfplumber
+pdf2image
+pytesseract
+opencv-python
+python-multipart
+numpy
+scikit-learn

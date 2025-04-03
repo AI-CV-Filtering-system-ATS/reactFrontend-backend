@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Montserrat:wght@700&display=swap');
+
+.dashboard-container {
+  background: linear-gradient(to bottom, #007BFF, #033163, #021D39);  
+  min-height: calc(100vh - 140px); 
+ 
+    padding: 40px;
+    padding-bottom: 100px;
+    color: #020202;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center; 
+    padding-top: 150px; 
+  }
+
+  .title{
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;  
+
+  }
+  .dashboard-fullcard-outer{
+    background: #009ABC;  
+    padding: 10px;
+    min-width: 95%;
+    border-radius: 8px;
+  }
+  
+  .dashboard-fullcard-inner{
+    background: #023469;  
+    padding: 25px;
+    min-width: 95%;
+    border-radius: 8px;
+  }
+  .dashboard-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: auto auto;         
+    grid-gap: 20px;
+    max-width: 100%;
+    margin: 0 auto; 
+  }
+  
+  .total-cvs-card {
+    grid-column: 1 / 3;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 0px 50px 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .card-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .user-icon {
+    width: 30px;
+    height: 60px;
+  }
+  
+  
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;  
+
+  }
+  
+  .card-value {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .chart-container {
+    background-color: #020d3a;
+    border-radius: 8px;
+    padding: 5px 20px 40px 0px;
+  }
+  
+  .bar-chart h3,
+  .donut-chart h3 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .barchart{
+    display: flex;
+    justify-content: center;  
+    align-items: center;       
+    height: 90%; 
+    }
+  
+  .pie-chart-container,
+  .bar-chart {
+      filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));  
+  }
+  
+  .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+  }
+  
+  .legend-color {
+      width: 15px;
+      height: 15px;
+      margin-right: 5px;
+  }
+
+  .recharts-pie-label {
+    text-shadow: none !important;  
+    font-weight: bold !important;  
+  }
+  
+
+.pie-title{
+  text-align: center;
+  color: #ffffff;
+}
+  
+
+.bar-chart-bar rect {
+  fill: var(--bar-color) !important;
+  transition: fill 0.3s ease-in-out;
+}
+ 
+.bar-chart-bar rect:hover {
+  fill: #043835 !important;  
+}
+
+ .recharts-layer.recharts-cartesian-axis-tick text {
+  font-size: 12px !important;
+  font-weight: bold;
+  fill: #adadad !important;  
+}
+
+
+
+ .recharts-tooltip-wrapper {
+  background-color: #1e3d58 !important;   
+  color: rgb(255, 255, 255) !important;   
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(102, 93, 93, 0.2);
+  font-size: 14px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.recharts-tooltip-item-list {
+  padding: 5px;
+}
+
+.recharts-tooltip-label {
+  font-weight: bold;
+}
+
