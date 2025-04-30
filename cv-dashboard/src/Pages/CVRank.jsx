@@ -106,7 +106,7 @@ const CVRank = () => {
               <div className="card-content">
                 <h2>Rank {index+1}</h2>
                 <h3>{cv.file_name}</h3>
-                <p className='Similarity'>Compatibility: {(cv.similarity_score * 1000).toFixed(2)}%</p>
+                <p className='Similarity'>Compatibility: {(cv.similarity_score * 100).toFixed(2)}%</p>
                 </div>
             </Card>
           ))}
